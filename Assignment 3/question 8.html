@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3.8</title>
+</head>
+<body>
+    <h1>Assignment 3.8</h1>
+    <b>Repeated sum of digits until there is only a single digit in the number</b><br><br>
+    Enter the number<br>
+    <input type="text" id="num" value="456"><br><br>
+    <input type="button" value="Solve" onclick="repeatSum()">
+    <p id ="result"></p>
+    <script>
+        function repeatSum() {
+            let num = document.getElementById("num").value;
+            while(num> 9){
+                let sum = 0;
+                num.toString().split('').forEach(digit => sum += parseInt(digit));
+                num = sum;
+            }            
+            document.getElementById("result").innerHTML = "The sum of digits " + num;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3.3</title>
+</head>
+<body>
+    <h1>Assignment 3.3</h1>
+    <h3>Enter INDIA in textbox & click on modify button</h3>
+    The input string is 
+    <input type="text" id="in" value ="INDIA"><br>
+    <input type="button" value="Modify" onclick="modifyUsingSplice()">
+    <p id="result"></p>
+    <script>
+        function modifyUsingSplice() {
+            let string = document.getElementById('in').value;
+            let array = string.split('');
+            array.splice(3, 0, 'O', 'N', 'E', 'S');
+            let output = array.join('');
+            document.getElementById('result').innerHTML = "The output string is: " + output;
+            console.log(output);
+        }
+    </script>
+</body>
+</html>

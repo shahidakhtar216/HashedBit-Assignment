@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3.5</title>
+</head>
+<body>
+    <h1>Assignment 3.5</h1>
+    Enter the string <br>
+    <input type="text" name="string" id="string" value="Hello I am BayBlade"><br><br>
+    Enter the wrong word<br>
+    <input type="text" name="wrongword" id="wrongword" value="BayBlade"><br><br>
+    Enter the correct word<br>
+    <input type="text" name="correctword" id="correctword" value="BayMax"><br><br>
+    <input type="submit" value="Change" onclick="ChangeWord()"><br>
+    <p id = "correctstring"></p>
+    <script>
+        function ChangeWord() {
+            let string = document.getElementById('string').value;
+            let wrongword = document.getElementById('wrongword').value;
+            let correctword = document.getElementById('correctword').value;
+            let correctedString = correctfn(string,wrongword,correctword);
+            document.getElementById('correctstring').innerHTML = "The Corrected String is: <br>" + correctedString;
+        }
+        function correctfn(string,wrongword,correctword) {
+            return string.replace(wrongword,correctword);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3.4</title>
+</head>
+<body>
+    <h1>Assignment 3.4</h1>
+    Enter the string to be taken<br><br>
+
+   <input type="text" id = "in" value="Hello Welcome To India"><br><br>
+    <button onclick="CountVowelsAndConsonants()">Count Vowels and Consonants</button><br><br>
+    The length of the string:  <span id = "out"></span><br><br>
+    The number of <b>Vowels</b>:  <span id = "vowels"></span><br><br>
+    The number of <b>Consonants</b>:  <span id = "consonants"></span><br><br>
+    The number of <b>Spaces</b>:  <span id = "spaces"></span>
+    <script>
+      function CountVowelsAndConsonants(){
+        let input = document.getElementById("in").value;
+        let str = input.toLowerCase();
+        let strLength = str.length;
+        let vwls = 0;
+        let space = 0;
+        let cons = 0;
+        document.getElementById("out").innerHTML = str.length;
+        for (let i = 0; i < strLength; i++) {
+            if (str.charAt(i) == "a"||str.charAt(i) == "e" || str.charAt(i) == "i" || str.charAt(i) == "o" || str.charAt(i) == "u"){
+                vwls++;
+            }
+            else if (str.charAt(i) == " ") {
+                space++;
+            }
+            else{
+                cons++;
+            }
+        }
+        document.getElementById("vowels").innerHTML = vwls;
+        document.getElementById("consonants").innerHTML = cons;
+        document.getElementById("spaces").innerHTML = space;
+      }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3.1</title>
+</head>
+<body>
+    <h1>Assignment 3.1</h1>
+    <h2>States of India</h2>
+    <input type="checkbox" value="filter" id ="filter" onchange="filterState()">
+    No States starting with vowels<br>
+    <h3><b>LIST OF STATES</b></h3>
+    <p id="result"></p>
+    <h4><b>COUNT OF STATES</b></h4>
+    <p id="cnt"></p>
+    <script>
+        var states = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"];
+
+        function startsWithVowel(state) {
+            var first_letter = state.charAt(0).toLowerCase();
+            return ["a","e","i","o","u"].indexOf(first_letter) === -1;
+        }
+
+        function filterState(){
+            var result;
+            var count = 0;
+            if(document.getElementById("filter").checked) {
+                result = states.filter(startsWithVowel);
+                count = result.length;
+            }
+            else{
+                result = states;
+                count = result.length;
+            }
+            document.getElementById("result").innerHTML = result.join("<br>");
+            document.getElementById("cnt").innerHTML = count;
+        }
+        window.onload = filterState;
+    </script>
+</body>
+</html>

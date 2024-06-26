@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3.6</title>
+</head>
+<body>
+    <h1>Assignment 3.6</h1>
+    the given array is <br>
+    <p id="result"></p>
+    <input type="checkbox" name="filter" id="filter" onchange="arrayfilter()"> number greater than 5
+    <script>
+        let inputArr = [1,2,3,9,10,7,5,4,3];
+        document.getElementById("result").innerHTML = inputArr;
+        function arrayfilter() {
+            if (document.getElementById("filter").checked) {
+                let newarr = inputArr.filter(num => num > 5);
+                document.getElementById("result").innerHTML = newarr;
+            } else {
+                document.getElementById("result").innerHTML = inputArr;
+            }
+        }
+    </script>
+</body>
+</html>

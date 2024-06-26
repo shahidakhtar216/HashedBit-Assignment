@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3.11</title>
+</head>
+<body>
+    <h1>Assignment 3.11</h1>
+    [
+    <p id ="result"></p>
+    ]
+    <br><br><input type="checkbox" name="average" id="average" onchange="calculateAverage()"> Get Average
+    <script>
+        const students = [
+          {
+            student1: {
+              subject1: 44,
+              subject2: 56,
+              subject3: 87,
+              subject4: 97,
+              subject5: 37
+            }
+          },
+          {
+            student2: {
+              subject1: 44,
+              subject2: 56,
+              subject3: 87,
+              subject4: 97,
+              subject5: 37
+            }
+          },
+          {
+            student3: {
+              subject1: 44,
+              subject2: 56,
+              subject3: 87,
+              subject4: 97,
+              subject5: 37
+            }
+          }
+        ];
+        
+        function calculateAverage() {
+            let displayText = '';
+            if(document.getElementById("average").checked){
+                const results = students.map(student => {
+                    const scores = Object.values(student[Object.keys(student)[0]]);
+                    const average = scores.reduce((acc, curr) => acc + curr, 0) / scores.length;
+                    return { [Object.keys(student)[0]]: { average } };
+                });
+                results.forEach(student => {
+                    displayText += `${Object.keys(student)[0]}:{<br>&nbsp;&nbsp;average: ${student[Object.keys(student)[0]].average}<br>},<br>`;
+                });
+            }
+            else {
+                const results = students.map(student => {
+                    const studentName = Object.keys(student)[0];
+                    const scores = student[studentName];
+                    let scoreText = `${studentName}:{<br>`;
+                    for (const subject in scores) {
+                        scoreText += `&nbsp;&nbsp;${subject}: ${scores[subject]},<br>`;
+                    }
+                    scoreText = scoreText.slice(0, -5); 
+                    scoreText += `<br>},<br>`;
+                    return scoreText;
+                });
+                displayText = results.join('');
+            }
+          document.getElementById("result").innerHTML = displayText;
+        }
+        window.onload = function() {
+            calculateAverage();
+        }
+        
+        </script>
+</body>
+</html>

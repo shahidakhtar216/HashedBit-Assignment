@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3.10</title>
+</head>
+<body>
+    <h1>Assignment 3.10</h1>
+    <h4>Input text </h4>
+    <input type="text" id = "input" value="Hello"><br>
+    <input type="button" value="Reverse" onclick="reverseString()"><br>
+    <h4>Output text </h4>
+    <span id="result"></span>
+    <script>
+        function reverseString(){
+            let str = document.getElementById("input").value;
+            let result = str.split("").reverse().join("");
+            document.getElementById("result").innerHTML = result;
+            console.log(result);
+        }
+    </script>
+</body>
+</html>

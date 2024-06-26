@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3.9</title>
+</head>
+<body>
+    <h1>Assignment 3.9</h1>
+
+    <p id = "in">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quis nam suscipit molestiae tenetur cupiditate iste officia earum aliquam maiores ad excepturi repellat optio, cumque saepe omnis quaerat obcaecati impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime recusandae, ipsa ex aliquam labore pariatur ipsum ab voluptate architecto quo, eligendi expedita in explicabo enim consequatur iusto consectetur aperiam ullam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas delectus quibusdam, soluta quae consectetur sed, consequuntur, aperiam iure a libero distinctio nemo. Nemo vel beatae corrupti nulla eveniet! A, beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum adipisci quaerat provident dolorem omnis et tempore neque consequuntur obcaecati harum temporibus, excepturi molestiae sed accusantium esse! Deserunt vitae ipsam illo.</p>
+    <br><br>
+    <button onclick="CountWords()">Count</button><br><br>
+    The number of <b>Words</b>:  <span id = "words"></span><br><br>
+    <script>
+        function CountWords(){
+          let input = document.getElementById("in").innerText;
+          let words = input.match(/\w+/g).length;
+          document.getElementById("words").innerHTML = words;
+        }    
+      </script>
+</body>
+</html>
